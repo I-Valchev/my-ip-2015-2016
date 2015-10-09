@@ -1,4 +1,4 @@
-package school_web;
+package class_001;
 
 public class ClassExample {
 	public static void main(String[] args) {
@@ -11,5 +11,8 @@ public class ClassExample {
 		
 //		print the value
 		System.out.println(height);
+		
+//		print the calculated area
+		System.out.println("Area: " + room.calculateArea());
 	}
 }

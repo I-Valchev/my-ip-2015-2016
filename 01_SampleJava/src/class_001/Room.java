@@ -1,4 +1,4 @@
-package school_web;
+package class_001;
 
 public class Room {
 	private int width;
@@ -20,5 +20,18 @@ public class Room {
 	
 	public int calculateArea(){
 		return height*width;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj == this){
+			return true;
+		}
+		if(obj instanceof Room){
+			final Room room2 = (Room) obj;
+			return room2.getHeight() == height && room2.getWidth() == width;
+		}
+		return false;
 	}
 }

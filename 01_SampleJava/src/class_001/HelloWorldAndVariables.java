@@ -1,4 +1,4 @@
-package school_web;
+package class_001;
 
 public class HelloWorldAndVariables {
 	public static void main(String[] args) {
@@ -7,7 +7,14 @@ public class HelloWorldAndVariables {
 		int variable;
 		//variable - accessible here
 		variable = 1;
+		
+		System.out.printf("Count %d", 1+3);
 	}
 	
 	//variable - not accessible here
 }
+
+/*
+	1) Maven
+	2) Print flags
+*/
