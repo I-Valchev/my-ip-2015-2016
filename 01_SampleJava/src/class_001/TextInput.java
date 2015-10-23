@@ -11,5 +11,7 @@ public class TextInput {
 		final String name = in.next();
 //		output the name
 		System.out.println("Hello, " + name);
+//		ObjectInputStream - reads stream as objects
+		
 	}
 }
