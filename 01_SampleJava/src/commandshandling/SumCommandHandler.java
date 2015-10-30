@@ -1,15 +1,8 @@
 package commandshandling;
 
-public class SumCommandHandler implements CommandHandler{
-
-	private final String[] args;
-	
-	public SumCommandHandler(String[]args){
-		this.args = args;
-	}
-	
+public class SumCommandHandler implements CommandHandler{	
 	@Override
-	public int execute() {
+	public int execute(String[] args) {
 		// TODO Auto-generated method stub
 		return Integer.valueOf(args[1]) + Integer.valueOf(args[2]);
 	}

@@ -1,9 +1,14 @@
 package commandshandling;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CommandsHandler {
+	private static Map<String, CommandHandler> HANDLERS = new HashMap<String, CommandHandler>();
+	
 	public static void main(String [] args){
+		HANDLERS.put("sum", new SumCommandHandler());
 //		input:
 		System.out.print("Enter command: ");
 		final Scanner in = new Scanner(System.in);
@@ -11,7 +16,7 @@ public class CommandsHandler {
 		
 //		processing:
 		CommandHandler handler = parse(command);
-		final int result = handler.execute();
+		final int result = handler.execute(command.split(":"));
 		
 //		output
 		System.out.println("Result: " + result);
@@ -24,11 +29,15 @@ public class CommandsHandler {
 	 */
 	private static CommandHandler parse(String command) {
 		// TODO Auto-generated method stub
+		
 		final String[] split = command.split(":");
-		if("sum".equals(split[0])){ //avoid NullPointerException
-			return new SumCommandHandler(split);
+		final CommandHandler result = HANDLERS.get(split[0]);
+		
+		if(result == null){
+			throw new IllegalArgumentException("Unknown command: " + command);
 		}
-		throw new IllegalArgumentException("Unknown command: " + command);
+		
+		return result;
 	}
 	
 	public int run(){
